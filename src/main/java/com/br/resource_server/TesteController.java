@@ -8,6 +8,7 @@ public class TesteController {
 
     @GetMapping("/teste")
     public String teste() {
+        System.out.println("Teste endpoint acessado!");
         return "API funcionando!";
     }
 
