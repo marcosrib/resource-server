@@ -9,3 +9,21 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:9000
+      client:
+        provider:
+          resource-auth-server:
+            issuer-uri: http://localhost:9000
+        registration:
+          resource-server-client:
+            provider: resource-auth-server
+            client-id: resource-server-service
+            client-secret: secret123
+            authorization-grant-type: client_credentials
+            client-authentication-method: client_secret_basic
+            scope:
+              - apis:read
+              - apis:write
+
+resource-server-2:
+  base-url: http://localhost:9002
+  oauth2-client-registration-id: resource-server-client
