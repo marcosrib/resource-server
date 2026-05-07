@@ -1,7 +1,11 @@
 package com.br.resource_server;
 
+import java.util.Collections;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AbstractAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.AuthorizedClientServiceOAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientProviderBuilder;
@@ -26,7 +30,9 @@ public class OAuth2ClientConfig {
         );
 
         manager.setAuthorizedClientProvider(provider);
-  
+    
         return manager;
     }
+
+
 }
