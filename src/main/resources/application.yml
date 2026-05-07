@@ -12,7 +12,8 @@ spring:
       client:
         provider:
           resource-auth-server:
-            issuer-uri: http://localhost:9000
+            #issuer-uri: http://localhost:9000
+            token-uri: http://localhost:9000/oauth2/token
         registration:
           resource-server-client:
             provider: resource-auth-server
